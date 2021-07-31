@@ -4,17 +4,6 @@ repl(){
   clj -R:nREPL -m nrepl.cmdline -i
 }
 
-push(){
-  ORIGIN=$(git remote get-url origin)
-  rm -rf .git
-  git init -b main
-  git remote add origin $ORIGIN
-  git config --local include.path ../.gitconfig
-  git add .
-  git commit -m "i am conj program"
-  git push -f -u origin main
-}
-
 connect7888(){
   clj -Sdeps '{:deps {nrepl {:mvn/version "0.5.3"}}}' -m nrepl.cmdline --connect --host 127.0.0.1 --port 7888
 }
