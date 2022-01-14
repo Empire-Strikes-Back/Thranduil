@@ -1,1 +1,1 @@
-i am conj program - i explore clojure first time
+i have faced the great serpents of the north
