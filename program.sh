@@ -1,7 +1,11 @@
 #!/bin/bash
 
 repl(){
-  clj -R:nREPL -m nrepl.cmdline -i
+  clj \
+    -J-Dclojure.core.async.pool-size=1 \
+    -X:repl Ripley.core/process \
+    :main-ns Thranduil.main
+  # clj -R:nREPL -m nrepl.cmdline -i
 }
 
 connect7888(){
@@ -37,18 +41,10 @@ lein_conn(){
 }
 
 
-install_little_schemer(){
+run_scheme(){
+  scheme 
 
-  apt-get install -y build-essential  uuid-dev libncurses5-dev libncursesw5-dev libx11-dev && \
-  apt-get install -y lsb-release build-essential libssl-dev python
-
-  git clone https://github.com/cisco/ChezScheme
-
-  cd ChezScheme && \
-  git checkout 5aba39c40b46cee61a388d71ef4e5eebfa717108 && \
-    ./configure && \
-    sudo make install
-
+  # (load "src/Thranduil/little-schemer.scm")
 }
 
 load_codeqs(){

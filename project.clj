@@ -26,8 +26,8 @@
                  [ring-cors/ring-cors "0.1.13"]]
   ; :min-lein-version "2.8.3"
   :resource-paths ["config", "resources"]
-  :repl-options {:init-ns conj.dq-server #_conj.lein
-                 :main conj.dq-server
+  :repl-options {:init-ns Thranduil.dq-server #_Thranduil.lein
+                 :main Thranduil.dq-server
                 ;  :nrepl-middleware [cider.piggieback/wrap-cljs-repl]
                  }
   :profiles {:dev {:aliases {"run-dev" ["trampoline" "run" "-m" "aq.aq/-main"]}
